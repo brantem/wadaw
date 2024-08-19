@@ -1,0 +1,9 @@
+[manager]
+%{ for instance in manager ~}
+${instance.tags.Name} ${instance.public_ip}
+%{ endfor ~}
+
+[worker]
+%{ for instance in worker ~}
+${instance.tags.Name} ${instance.private_ip}
+%{ endfor ~}
